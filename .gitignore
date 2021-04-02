@@ -1,0 +1,10 @@
+public
+# dotenv environment variable files
+.env*
+
+# Mac files
+.DS_Store
+
+# Dependency directories
+node_modules/
+.vscode
