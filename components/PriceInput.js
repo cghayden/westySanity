@@ -7,7 +7,7 @@ function createPatchFrom(value) {
 
 const formatMoney = Intl.NumberFormat('en-CA', {
   style: 'currency',
-  currency: 'CAD',
+  currency: 'USD',
 }).format;
 
 export default function PriceInput({ type, value, onChange, inputComponent }) {

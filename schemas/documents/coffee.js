@@ -1,4 +1,4 @@
-import PriceInput from '../components/PriceInput';
+import PriceInput from '../../components/PriceInput';
 
 export default {
   name: 'coffee',
@@ -43,9 +43,24 @@ export default {
 
     {
       name: 'description',
-      title: 'Description',
+      title: 'Short Description',
       type: 'string',
-      description: 'Description of the Coffee',
+      description:
+        'A concise description of the coffee to display on the home page tile',
+    },
+    {
+      name: 'descriptionLong',
+      title: 'Longer Description',
+      type: 'array',
+      of: [{ type: 'block' }],
+      description:
+        'A longer, more detailed story about this roast to show on the specfic page for this coffee',
+    },
+    {
+      name: 'flavorProfile',
+      title: 'Flavor Profile',
+      type: 'string',
+      description: 'Flavor Profile of the coffee',
     },
     {
       name: 'region',
@@ -61,9 +76,21 @@ export default {
     },
     {
       name: 'process',
-      title: 'Process',
+      title: 'Processing',
       type: 'string',
       description: 'How the Coffee was Processed',
+    },
+    {
+      name: 'cultivar',
+      title: 'Cultivar',
+      type: 'string',
+      description: 'Cultivar',
+    },
+    {
+      name: 'elevation',
+      title: 'Elevation',
+      type: 'string',
+      description: 'Elevation',
     },
     {
       name: 'roastDate',
@@ -87,6 +114,14 @@ export default {
       // custom input component
       description: 'Number of pounds in stock',
       //rule : greater than 0?
+    },
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'slug',
