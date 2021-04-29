@@ -131,6 +131,8 @@ export default {
         source: 'name',
         maxLength: 100,
       },
+      description:
+        'The slug provides a unique URL on the website for this item',
     },
   ],
   preview: {

@@ -8,7 +8,7 @@ export default {
       title: 'name',
       type: 'string',
       description: 'descriptive name of the text block',
-      readOnly: true,
+      // readOnly: true,
     },
     {
       name: 'heading',
