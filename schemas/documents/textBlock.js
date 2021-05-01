@@ -1,7 +1,7 @@
 export default {
   name: 'textBlock',
   type: 'document',
-  title: 'Text Block',
+  title: 'Text Blocks',
   fields: [
     {
       name: 'name',

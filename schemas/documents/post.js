@@ -1,7 +1,7 @@
 export default {
   name: 'post',
   type: 'document',
-  title: 'Blog Post',
+  title: 'Blog Posts',
   fields: [
     {
       name: 'title',
@@ -13,8 +13,7 @@ export default {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
-      description:
-        'Some frontends will require a slug to be set to be able to show the post',
+      description: 'A slug is used to set the URL for the post',
       options: {
         source: 'title',
         maxLength: 96,
@@ -36,7 +35,7 @@ export default {
       type: 'excerptPortableText',
       title: 'Excerpt',
       description:
-        'This ends up on summary pages, on Google, when people share your post in social media.',
+        'This text is used for a descriptive summary for links to the post, on Google, and when people share your post in social media.',
     },
     //   {
     //     name: 'authors',

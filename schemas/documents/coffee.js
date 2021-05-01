@@ -3,7 +3,7 @@ import PriceInput from '../../components/PriceInput';
 export default {
   name: 'coffee',
   type: 'document',
-  title: 'Coffee',
+  title: 'Coffees',
   fields: [
     {
       name: 'name',
@@ -137,10 +137,11 @@ export default {
   ],
   preview: {
     select: {
-      name: 'name',
+      title: 'name',
+      stock: 'stock',
     },
-    prepare: ({ name }) => ({
-      title: `${name} `,
+    prepare: ({ name, stock }) => ({
+      title: `${name}, ${stock}`,
     }),
   },
 };

@@ -9,7 +9,7 @@ export default {
     {
       name: 'caption',
       type: 'string',
-      title: 'Caption',
+      title: 'Image Caption',
       options: {
         isHighlighted: true,
       },

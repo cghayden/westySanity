@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import coffee from './documents/coffee';
 import textBlock from './documents/textBlock';
 import post from './documents/post';
+import event from './documents/event';
 
 // object types
 import bodyPortableText from './objects/bodyPortableText';
@@ -24,6 +25,7 @@ export default createSchema({
     coffee,
     textBlock,
     post,
+    event,
     bodyPortableText,
     excerptPortableText,
     mainImage,
