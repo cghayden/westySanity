@@ -12,6 +12,14 @@ export default {
       description: 'Name of the coffee',
     },
     {
+      name: 'stock',
+      title: 'Stock',
+      type: 'number',
+      // custom input component
+      description: 'Number of pounds in stock',
+      //rule : greater than 0?
+    },
+    {
       name: 'roastLevel',
       title: 'Roast Level',
       type: 'string',
@@ -28,16 +36,12 @@ export default {
       },
     },
     {
-      name: 'blend',
-      title: 'Blend',
-      type: 'string',
-      description: 'Blend or Single Origin?',
+      name: 'singleOrigin',
+      title: 'Single Origin',
+      type: 'boolean',
+      description: 'Is this Coffee Single Origin?',
       options: {
-        list: [
-          { title: 'Single Origin', value: 'singleOrigin' },
-          { title: 'Blend', value: 'blend' },
-        ],
-        layout: 'radio', // <-- defaults to 'dropdown'
+        layout: 'checkbox',
       },
     },
 
@@ -107,14 +111,7 @@ export default {
       description: 'Price of the coffee in cents',
       validation: (Rule) => Rule.min(1000),
     },
-    {
-      name: 'stock',
-      title: 'Stock',
-      type: 'number',
-      // custom input component
-      description: 'Number of pounds in stock',
-      //rule : greater than 0?
-    },
+
     {
       name: 'image',
       title: 'Image',
@@ -135,9 +132,17 @@ export default {
         'The slug provides a unique URL on the website for this item',
     },
   ],
+  orderings: [
+    {
+      title: 'In Stock',
+      name: 'stock',
+      by: [{ field: 'stock', direction: 'desc' }],
+    },
+  ],
+
   preview: {
     select: {
-      title: 'name',
+      name: 'name',
       stock: 'stock',
     },
     prepare: ({ name, stock }) => ({

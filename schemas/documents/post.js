@@ -23,7 +23,8 @@ export default {
       name: 'publishedAt',
       type: 'datetime',
       title: 'Published at',
-      description: 'This can be used to schedule post for publishing',
+      description:
+        'This can be used to schedule post for publishing (can be a future date)',
     },
     {
       name: 'mainImage',

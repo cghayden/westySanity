@@ -7,21 +7,22 @@ export default {
       name: 'name',
       title: 'name',
       type: 'string',
-      description: 'descriptive name of the text block',
-      // readOnly: true,
+      description:
+        'descriptive name of the text block, used to query from the front end (this will not change)',
+      readOnly: true,
     },
     {
       name: 'heading',
       title: 'heading',
       type: 'string',
-      description: 'Heading for the block',
+      description: 'Heading for the page',
     },
     {
       name: 'content',
       title: 'content',
       type: 'array',
       of: [{ type: 'block' }],
-      description: 'A block of text to be used in the position of name, above',
+      description: 'A block of text for the page',
     },
   ],
   preview: {
