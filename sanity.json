@@ -7,6 +7,7 @@
     "projectId": "yi1dikna",
     "dataset": "production"
   },
+
   "plugins": [
     "@sanity/base",
     "@sanity/components",
@@ -16,7 +17,10 @@
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": ["@sanity/vision"],
+      "api": {
+        "dataset": "dev"
+      }
     }
   },
   "parts": [

@@ -9,11 +9,13 @@ import coffee from './documents/coffee';
 import textBlock from './documents/textBlock';
 import post from './documents/post';
 import event from './documents/event';
+import landingPage from './documents/landingPage';
 
 // object types
 import bodyPortableText from './objects/bodyPortableText';
 import excerptPortableText from './objects/excerptPortableText';
 import mainImage from './objects/mainImage';
+import backgroundImage from './objects/backgroundImage';
 // Then we give our schema to the builder and provide the result to Sanity
 
 export default createSchema({
@@ -26,8 +28,10 @@ export default createSchema({
     textBlock,
     post,
     event,
+    landingPage,
+    backgroundImage,
+    mainImage,
     bodyPortableText,
     excerptPortableText,
-    mainImage,
   ]),
 });
