@@ -6,16 +6,20 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // document schemas
 import coffee from './documents/coffee';
-import textBlock from './documents/textBlock';
 import post from './documents/post';
 import event from './documents/event';
 import landingPage from './documents/landingPage';
+import coffeePage from './documents/coffeePage';
+import eventsPage from './documents/eventsPage';
+import aboutPage from './documents/aboutPage';
 
 // object types
 import bodyPortableText from './objects/bodyPortableText';
 import excerptPortableText from './objects/excerptPortableText';
 import mainImage from './objects/mainImage';
 import backgroundImage from './objects/backgroundImage';
+import siteSettings from './documents/siteSettings';
+
 // Then we give our schema to the builder and provide the result to Sanity
 
 export default createSchema({
@@ -25,7 +29,6 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     coffee,
-    textBlock,
     post,
     event,
     landingPage,
@@ -33,5 +36,9 @@ export default createSchema({
     mainImage,
     bodyPortableText,
     excerptPortableText,
+    siteSettings,
+    coffeePage,
+    eventsPage,
+    aboutPage,
   ]),
 });

@@ -14,13 +14,12 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/dashboard",
-    "dashboard-widget-netlify"
+    "dashboard-widget-netlify",
+    "@sanity/color-input"
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ],
+      "plugins": ["@sanity/vision"],
       "api": {
         "dataset": "dev"
       }
@@ -34,6 +33,10 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "./dashboardConfig.js"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./deskStructure.js"
     }
   ]
 }

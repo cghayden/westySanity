@@ -21,21 +21,36 @@ export default {
         'Optional Text that will overlay the main landing page image',
     },
     {
-      name: 'text1',
+      name: 'transitionText1',
       type: 'bodyPortableText',
-      title: 'Text Block 1',
+      title: 'Transition Text Block 1',
       description:
         'Optional Text that will separate the main image from the coffee listing section',
     },
     {
-      name: 'bgImage2',
-      type: 'backgroundImage',
-      title: 'Background Image after coffee listing',
+      name: 'coffeeSectionHeading',
+      title: 'Optional Heading for the coffee section',
+      type: 'string',
     },
     {
-      name: 'text2',
+      name: 'coffeeText',
       type: 'bodyPortableText',
-      title: 'Text Block 2',
+      title: 'Optional Text for the coffee section',
+    },
+    {
+      name: 'bgImage2',
+      type: 'backgroundImage',
+      title: 'Background Image of Featured Coffees displayed on home Page',
+    },
+    {
+      name: 'coffeeBackgroundColor',
+      title: 'Background Color of coffee section, if no image is uploaded ',
+      type: 'color',
+    },
+    {
+      name: 'transitionText2',
+      type: 'bodyPortableText',
+      title: 'Transition Text Block 2',
       description:
         'Optional Text between background image 2 and background image 3',
     },
@@ -45,16 +60,24 @@ export default {
       title: 'Optional Third Background Image',
     },
     {
-      name: 'text3',
+      name: 'transitionText3',
       type: 'bodyPortableText',
-      title: 'Text Block 3',
+      title: 'Transition Text Block 3',
       description:
         'Optional Text between background image 3 and background image 4',
     },
     {
       name: 'bgImage4',
       type: 'backgroundImage',
-      title: 'Optional Fourth Background Image',
+      title: 'Optional Background Image at the bottom of the page',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'bottomBackgroundColor',
+      title: 'Background Color of bottom of homePage, if no image is uploaded ',
+      type: 'color',
     },
   ],
   preview: {
