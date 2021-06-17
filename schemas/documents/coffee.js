@@ -3,7 +3,7 @@ import PriceInput from '../../components/PriceInput';
 export default {
   name: 'coffee',
   type: 'document',
-  title: 'Coffees',
+  title: 'Coffee',
   fields: [
     {
       name: 'name',

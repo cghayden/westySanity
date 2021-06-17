@@ -12,49 +12,59 @@ const hiddenDocTypes = (listItem) =>
   ].includes(listItem.getId());
 export default () =>
   S.list()
-    .title('Content')
+    .title('Base')
     .items([
       S.listItem()
-        .title('Site Page Settings')
-        .icon(GoSettings)
+        .title('Pages')
         .child(
-          S.document().schemaType('siteSettings').documentId('siteSettings')
-        ),
-      S.listItem()
-        .title('Home Page')
-        .icon(GoHome)
-        .child(
-          S.document()
-            .schemaType('landingPage')
-            .documentId('homePage')
-            .views([S.view.form(), PreviewIFrame()])
-        ),
-      S.listItem()
-        .title('Coffee Page')
-        .icon(PageIcon)
-        .child(
-          S.document()
-            .schemaType('coffeePage')
-            .documentId('coffeePage')
-            .views([S.view.form(), PreviewIFrame()])
-        ),
-      S.listItem()
-        .title('Events Page')
-        .icon(PageIcon)
-        .child(
-          S.document()
-            .schemaType('eventsPage')
-            .documentId('eventsPage')
-            .views([S.view.form(), PreviewIFrame()])
-        ),
-      S.listItem()
-        .title('About Page')
-        .icon(PageIcon)
-        .child(
-          S.document()
-            .schemaType('aboutPage')
-            .documentId('aboutPage')
-            .views([S.view.form(), PreviewIFrame()])
+          S.list()
+            .title('Pages')
+            .items([
+              S.listItem()
+                .title('Sitewide Page Settings')
+                .icon(GoSettings)
+                .child(
+                  S.document()
+                    .schemaType('siteSettings')
+                    .documentId('siteSettings')
+                ),
+              S.listItem()
+                .title('Home Page')
+                .icon(GoHome)
+                .child(
+                  S.document()
+                    .schemaType('landingPage')
+                    .documentId('homePage')
+                    .views([S.view.form(), PreviewIFrame()])
+                ),
+              S.listItem()
+                .title('Coffee Page')
+                .icon(PageIcon)
+                .child(
+                  S.document()
+                    .schemaType('coffeePage')
+                    .documentId('coffeePage')
+                    .views([S.view.form(), PreviewIFrame()])
+                ),
+              S.listItem()
+                .title('Events Page')
+                .icon(PageIcon)
+                .child(
+                  S.document()
+                    .schemaType('eventsPage')
+                    .documentId('eventsPage')
+                    .views([S.view.form(), PreviewIFrame()])
+                ),
+              S.listItem()
+                .title('About Page')
+                .icon(PageIcon)
+                .child(
+                  S.document()
+                    .schemaType('aboutPage')
+                    .documentId('aboutPage')
+                    .views([S.view.form(), PreviewIFrame()])
+                ),
+            ])
         ),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
     ]);
