@@ -12,6 +12,7 @@ import landingPage from './documents/landingPage';
 import coffeePage from './documents/coffeePage';
 import eventsPage from './documents/eventsPage';
 import aboutPage from './documents/aboutPage';
+import contactPage from './documents/contactPage';
 
 // object types
 import bodyPortableText from './objects/bodyPortableText';
@@ -40,5 +41,6 @@ export default createSchema({
     coffeePage,
     eventsPage,
     aboutPage,
+    contactPage,
   ]),
 });

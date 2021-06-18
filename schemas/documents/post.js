@@ -1,7 +1,10 @@
+import { BsFileRichtext } from 'react-icons/bs';
+
 export default {
   name: 'post',
   type: 'document',
   title: 'Blog Posts',
+  icon: BsFileRichtext,
   fields: [
     {
       name: 'title',

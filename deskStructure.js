@@ -9,6 +9,7 @@ const hiddenDocTypes = (listItem) =>
     'coffeePage',
     'eventsPage',
     'aboutPage',
+    'contactPage',
   ].includes(listItem.getId());
 export default () =>
   S.list()
@@ -16,6 +17,7 @@ export default () =>
     .items([
       S.listItem()
         .title('Pages')
+        .icon(PageIcon)
         .child(
           S.list()
             .title('Pages')
@@ -62,6 +64,15 @@ export default () =>
                   S.document()
                     .schemaType('aboutPage')
                     .documentId('aboutPage')
+                    .views([S.view.form(), PreviewIFrame()])
+                ),
+              S.listItem()
+                .title('Contact Page')
+                .icon(PageIcon)
+                .child(
+                  S.document()
+                    .schemaType('contactPage')
+                    .documentId('contactPage')
                     .views([S.view.form(), PreviewIFrame()])
                 ),
             ])
