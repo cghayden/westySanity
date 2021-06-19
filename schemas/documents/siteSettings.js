@@ -17,6 +17,9 @@ export default {
       name: 'backgroundColor',
       type: 'color',
       title: 'Background color for pages, if an image is not used',
+      options: {
+        disableAlpha: true,
+      },
     },
   ],
 };
