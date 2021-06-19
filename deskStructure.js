@@ -1,5 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder';
 import { GoBrowser as PageIcon, GoHome, GoSettings } from 'react-icons/go';
+import { GiCoffeeBeans } from 'react-icons/gi';
 import PreviewIFrame from './components/previewIFrame';
 
 const hiddenDocTypes = (listItem) =>
@@ -10,6 +11,7 @@ const hiddenDocTypes = (listItem) =>
     'eventsPage',
     'aboutPage',
     'contactPage',
+    'coffee',
   ].includes(listItem.getId());
 export default () =>
   S.list()
@@ -77,5 +79,16 @@ export default () =>
                 ),
             ])
         ),
+      S.listItem()
+        .title('Coffee')
+        .icon(GiCoffeeBeans)
+        .child(
+          S.documentList()
+            .title('Coffee')
+            .schemaType('coffee')
+            .filter('_type == "coffee"')
+            .defaultOrdering([{ field: 'stock', direction: 'desc' }])
+        ),
+
       ...S.documentTypeListItems().filter(hiddenDocTypes),
     ]);
