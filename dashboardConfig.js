@@ -2,6 +2,20 @@ export default {
   widgets: [
     {
       name: 'project-info',
+      options: {
+        data: [
+          {
+            title: 'Orders',
+            value: 'https://orders.sanity.studio',
+            category: 'apps',
+          },
+          {
+            title: 'GitHub frontend repo',
+            value: 'https://github.com/cghayden/neighborly-gatsby-sanity',
+            category: 'Code',
+          },
+        ],
+      },
     },
     {
       name: 'project-users',

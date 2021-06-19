@@ -62,6 +62,11 @@ export default {
         'A longer, more detailed story about this roast to show on the specfic page for this coffee',
     },
     {
+      name: 'mainImage',
+      type: 'mainImage',
+      title: 'Main image',
+    },
+    {
       name: 'flavorProfile',
       title: 'Flavor Profile',
       type: 'string',
