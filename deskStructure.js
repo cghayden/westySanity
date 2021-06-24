@@ -1,6 +1,9 @@
 import S from '@sanity/desk-tool/structure-builder';
 import { GoBrowser as PageIcon, GoHome, GoSettings } from 'react-icons/go';
 import { GiCoffeeBeans } from 'react-icons/gi';
+import { FaFileInvoiceDollar } from 'react-icons/fa';
+import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
+
 import PreviewIFrame from './components/previewIFrame';
 
 const hiddenDocTypes = (listItem) =>
@@ -12,6 +15,7 @@ const hiddenDocTypes = (listItem) =>
     'aboutPage',
     'contactPage',
     'coffee',
+    'order',
   ].includes(listItem.getId());
 export default () =>
   S.list()
@@ -89,6 +93,34 @@ export default () =>
             .filter('_type == "coffee"')
             .defaultOrdering([{ field: 'stock', direction: 'desc' }])
         ),
-
+      S.listItem()
+        .title('Orders')
+        .icon(FaFileInvoiceDollar)
+        .child(
+          S.list()
+            .title('Orders')
+            .items([
+              S.listItem()
+                .title('Open Orders')
+                .icon(FaFileInvoiceDollar)
+                .child(
+                  S.documentList()
+                    .title('Open Orders')
+                    .schemaType('orders')
+                    .filter('_type == "order" && shipped != true')
+                    .defaultOrdering([{ field: 'orderDate', direction: 'asc' }])
+                ),
+              S.listItem()
+                .title('Filled Orders')
+                .icon(IoIosCheckmarkCircleOutline)
+                .child(
+                  S.documentList()
+                    .title('Filled Orders')
+                    .schemaType('orders')
+                    .filter('_type == "order" && shipped == true')
+                    .defaultOrdering([{ field: 'orderDate', direction: 'asc' }])
+                ),
+            ])
+        ),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
     ]);
