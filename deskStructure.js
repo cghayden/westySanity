@@ -108,7 +108,9 @@ export default () =>
                     .title('Open Orders')
                     .schemaType('orders')
                     .filter('_type == "order" && shipped != true')
-                    .defaultOrdering([{ field: 'orderDate', direction: 'asc' }])
+                    .defaultOrdering([
+                      { field: 'orderDate', direction: 'desc' },
+                    ])
                 ),
               S.listItem()
                 .title('Filled Orders')

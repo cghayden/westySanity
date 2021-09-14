@@ -5,11 +5,6 @@ export default {
       options: {
         data: [
           {
-            title: 'Orders',
-            value: 'https://orders.sanity.studio',
-            category: 'apps',
-          },
-          {
             title: 'GitHub frontend repo',
             value: 'https://github.com/cghayden/neighborly-gatsby-sanity',
             category: 'Code',
@@ -37,12 +32,5 @@ export default {
         ],
       },
     },
-    // {
-    //   name: 'document-list',
-    //   options: {
-    //     title: 'Last edited documents',
-    //     order: '_updatedAt desc',
-    //   },
-    // },
   ],
 };

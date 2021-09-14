@@ -11,19 +11,20 @@ export default {
     {
       name: 'bgImage1',
       type: 'backgroundImage',
-      title: 'Main image',
+      title: 'Main image (Optional)',
+      description: 'An optional background image at of the top of the page',
     },
     {
       name: 'overlayText1',
       type: 'bodyPortableText',
-      title: 'Main Image Overlay Text',
+      title: 'Main Image Overlay Text (optional)',
       description:
-        'Optional Text that will overlay the main landing page image',
+        'Optional Text that will overlay the main landing page background image',
     },
     {
       name: 'transitionText1',
       type: 'bodyPortableText',
-      title: 'Transition Text Block 1',
+      title: 'Transition Text Block 1 (optional)',
       description:
         'Optional Text that will separate the main image from the coffee listing section',
     },
