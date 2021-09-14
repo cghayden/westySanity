@@ -9,7 +9,7 @@ export default {
       type: 'string',
       description:
         'descriptive name of the text block, used to query from the front end (this will not change)',
-      readOnly: true,
+      // readOnly: true,
     },
     {
       name: 'heading',

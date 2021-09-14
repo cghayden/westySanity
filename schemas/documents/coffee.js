@@ -1,9 +1,10 @@
 import PriceInput from '../../components/PriceInput';
-
+import { GiCoffeeBeans } from 'react-icons/gi';
 export default {
   name: 'coffee',
   type: 'document',
-  title: 'Coffees',
+  title: 'Coffee',
+  icon: GiCoffeeBeans,
   fields: [
     {
       name: 'name',
@@ -124,6 +125,7 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      validation: (Rule) => Rule.required(),
       options: {
         source: 'name',
         maxLength: 100,
@@ -146,7 +148,8 @@ export default {
       stock: 'stock',
     },
     prepare: ({ name, stock }) => ({
-      title: `${name}, ${stock}`,
+      title: name,
+      subtitle: `${stock} in stock`,
     }),
   },
 };
