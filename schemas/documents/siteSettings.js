@@ -10,7 +10,7 @@ export default {
     },
     {
       name: 'backgroundImage',
-      type: 'image',
+      type: 'backgroundImage',
       title: 'Background Image for Pages',
     },
     {
