@@ -19,11 +19,11 @@ const PreviewIFrame = () =>
               <p>
                 This is your{' '}
                 <a
-                  href='https://neighborlycoffee.com'
+                  href='https://westycoffeemain.gatsbyjs.io'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  production site on Netlify
+                  production site on Gatsby
                 </a>
                 . <a href='/dashboard'>Trigger a deploy</a> to see published
                 changes.

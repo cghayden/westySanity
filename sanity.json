@@ -4,7 +4,7 @@
     "name": "NeighborlyCoffeeWebsite"
   },
   "api": {
-    "projectId": "yi1dikna",
+    "projectId": "t9guxb1x",
     "dataset": "production"
   },
   "plugins": [
@@ -19,10 +19,7 @@
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"],
-      "api": {
-        "dataset": "dev"
-      }
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [

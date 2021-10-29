@@ -4,7 +4,7 @@ export default function resolvePreviewUrl(document) {
   const baseUrl =
     env === 'development'
       ? 'http://localhost:8000'
-      : `https://www.neighborlycoffee.com/`;
+      : `https://westycoffeemain.gatsbyjs.io`;
   switch (document._type) {
     case 'landingPage':
       return baseUrl;
