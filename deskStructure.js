@@ -37,20 +37,7 @@ export default () =>
                   S.document()
                     .schemaType('siteSettings')
                     .documentId('siteSettings')
-                    .views([
-                      S.view.form(),
-                      ColorsPreview(),
-                      // S.view
-                      //   .component(({ document }) => {
-                      //     console.log('document component...', document);
-                      //     return (
-                      //       <pre>
-                      //         {JSON.stringify(document.displayed, null, 2)}
-                      //       </pre>
-                      //     );
-                      //   })
-                      //   .title('View JSON'),
-                    ])
+                    .views([S.view.form(), ColorsPreview()])
                 ),
               S.listItem()
                 .title('Home Page')
