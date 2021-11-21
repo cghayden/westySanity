@@ -1,4 +1,5 @@
 import PriceInput from '../../components/PriceInput';
+
 import { GiCoffeeBeans } from 'react-icons/gi';
 export default {
   name: 'coffee',
