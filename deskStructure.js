@@ -1,3 +1,4 @@
+import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
 import { GoBrowser as PageIcon, GoHome, GoSettings } from 'react-icons/go';
 import { GiCoffeeBeans } from 'react-icons/gi';
@@ -5,6 +6,7 @@ import { FaFileInvoiceDollar } from 'react-icons/fa';
 import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
 
 import PreviewIFrame from './components/previewIFrame';
+import ColorsPreview from './components/ColorsPreview';
 
 const hiddenDocTypes = (listItem) =>
   ![
@@ -35,6 +37,7 @@ export default () =>
                   S.document()
                     .schemaType('siteSettings')
                     .documentId('siteSettings')
+                    .views([S.view.form(), ColorsPreview()])
                 ),
               S.listItem()
                 .title('Home Page')
@@ -106,7 +109,7 @@ export default () =>
                 .child(
                   S.documentList()
                     .title('Open Orders')
-                    .schemaType('orders')
+                    .schemaType('order')
                     .filter('_type == "order" && shipped != true')
                     .defaultOrdering([
                       { field: 'orderDate', direction: 'desc' },
@@ -118,7 +121,7 @@ export default () =>
                 .child(
                   S.documentList()
                     .title('Filled Orders')
-                    .schemaType('orders')
+                    .schemaType('order')
                     .filter('_type == "order" && shipped == true')
                     .defaultOrdering([{ field: 'orderDate', direction: 'asc' }])
                 ),

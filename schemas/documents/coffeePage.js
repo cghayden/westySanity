@@ -10,14 +10,14 @@ export default {
     },
     {
       name: 'heading',
-      title: 'Heading for the coffee page (optional)',
       type: 'string',
+      title: 'Page Heading',
+      description: 'Optional',
     },
     {
       name: 'topText',
       type: 'bodyPortableText',
-      title: 'Text at the top of the coffee page',
-      description: '(optional)',
+      title: 'Text at the top of the coffee page (optional)',
     },
   ],
   preview: {

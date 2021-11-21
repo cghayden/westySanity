@@ -10,15 +10,16 @@ export default {
     },
     {
       name: 'heading',
-      title: 'Optional Heading for the events page',
       type: 'string',
-      description: '(optional)',
+      title: 'Page Heading',
+      description: 'Optional',
     },
 
     {
       name: 'text',
       type: 'bodyPortableText',
-      title: 'About Page Content',
+      title: 'Page Introductory Content',
+      description: 'Optional',
     },
   ],
   preview: {
