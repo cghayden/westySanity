@@ -14,6 +14,19 @@ export default {
       description: 'Name of the coffee',
     },
     {
+      name: 'slug',
+      title: 'URL (slug)',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
+      initialValue: { current: Date.now().toString() },
+      options: {
+        source: 'name',
+        maxLength: 100,
+      },
+      description:
+        'The slug provides a unique URL on the website for this item.  Choose "Generate" to change the default value from a number to a url based on the name of the item.',
+    },
+    {
       name: 'stock',
       title: 'Stock',
       type: 'number',
@@ -46,6 +59,16 @@ export default {
         layout: 'checkbox',
       },
     },
+    {
+      name: 'featured',
+      title: 'Featured Item?',
+      type: 'boolean',
+      description:
+        'A featured item will be displayed on the home page as well as the coffee page',
+      options: {
+        layout: 'checkbox',
+      },
+    },
 
     {
       name: 'description',
@@ -60,7 +83,7 @@ export default {
       type: 'array',
       of: [{ type: 'block' }],
       description:
-        'A longer, more detailed story about this roast to show on the specfic page for this coffee',
+        'A longer, more detailed story about this roast to show on the specific page for this coffee',
     },
     {
       name: 'flavorProfile',
@@ -121,18 +144,6 @@ export default {
       options: {
         hotspot: true,
       },
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      validation: (Rule) => Rule.required(),
-      options: {
-        source: 'name',
-        maxLength: 100,
-      },
-      description:
-        'The slug provides a unique URL on the website for this item',
     },
   ],
   orderings: [
