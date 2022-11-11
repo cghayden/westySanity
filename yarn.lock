@@ -1003,6 +1003,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@popperjs/core@^2.10.2":
+  version "2.11.4"
+  resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.4.tgz#d8c7b8db9226d2d7664553a0741ad7d0397ee503"
+
 "@popperjs/core@^2.11.2", "@popperjs/core@^2.5.4":
   version "2.11.2"
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.2.tgz#830beaec4b4091a9e9398ac50f865ddea52186b9"
@@ -1138,7 +1142,7 @@
     lodash "^4.17.15"
     react-color "^2.13.8"
 
-"@sanity/color@^2.1.5", "@sanity/color@^2.1.8":
+"@sanity/color@^2.1.5", "@sanity/color@^2.1.6", "@sanity/color@^2.1.8":
   version "2.1.8"
   resolved "https://registry.npmjs.org/@sanity/color/-/color-2.1.8.tgz#f05cd398eb8a1638dca87535e4fd78dd29b539f4"
 
@@ -1386,7 +1390,7 @@
   version "3.0.0"
   resolved "https://registry.npmjs.org/@sanity/generate-help-url/-/generate-help-url-3.0.0.tgz#60e9cba61b82103ea3761730a53cd9310b98892d"
 
-"@sanity/icons@^1.2.1", "@sanity/icons@^1.2.5":
+"@sanity/icons@^1.2.1", "@sanity/icons@^1.2.2", "@sanity/icons@^1.2.5":
   version "1.2.5"
   resolved "https://registry.npmjs.org/@sanity/icons/-/icons-1.2.5.tgz#2b90d8b1e59c8ff5b467f9f127ca9b35f52ce1ef"
 
@@ -1593,6 +1597,22 @@
     "@types/react" "^17.0.0"
     react "17.0.1"
     rxjs "^6.5.3"
+
+"@sanity/ui@^0.36.12":
+  version "0.36.17"
+  resolved "https://registry.npmjs.org/@sanity/ui/-/ui-0.36.17.tgz#2c7674e0d28da0bc2daa605c6dc2b194e5eb23d5"
+  dependencies:
+    "@juggle/resize-observer" "^3.3.1"
+    "@popperjs/core" "^2.10.2"
+    "@reach/auto-id" "^0.16.0"
+    "@sanity/color" "^2.1.6"
+    "@sanity/icons" "^1.2.2"
+    framer-motion "5.3.3"
+    lodash "^4.17.21"
+    popper-max-size-modifier "^0.2.0"
+    react-is "^17.0.2"
+    react-popper "^2.2.5"
+    react-refractor "^2.1.5"
 
 "@sanity/ui@^0.37.2":
   version "0.37.5"
@@ -4044,6 +4064,18 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
+framer-motion@5.3.3:
+  version "5.3.3"
+  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-5.3.3.tgz#366fa11512de4e79e061eb09a68278dad92b4419"
+  dependencies:
+    framesync "6.0.1"
+    hey-listen "^1.0.8"
+    popmotion "11.0.0"
+    style-value-types "5.0.0"
+    tslib "^2.1.0"
+  optionalDependencies:
+    "@emotion/is-prop-valid" "^0.8.2"
+
 framer-motion@6.2.1:
   version "6.2.1"
   resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-6.2.1.tgz#e0d02dd47211fe87e43bf5a0779991372bdadb1c"
@@ -4075,6 +4107,12 @@ framesync@6.0.1:
   resolved "https://registry.npmjs.org/framesync/-/framesync-6.0.1.tgz#5e32fc01f1c42b39c654c35b16440e07a25d6f20"
   dependencies:
     tslib "^2.1.0"
+
+framesync@^6.0.1:
+  version "6.1.0"
+  resolved "https://registry.npmjs.org/framesync/-/framesync-6.1.0.tgz#b22cf9afba52a9a895668b09e033b6a61e901c41"
+  dependencies:
+    tslib "^2.3.1"
 
 fresh@0.5.2:
   version "0.5.2"
@@ -5284,7 +5322,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.0.1, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.4, lodash@^4.3.0:
+lodash@^4.0.1, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.21, lodash@^4.17.4, lodash@^4.3.0:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
 
@@ -6119,6 +6157,15 @@ polished@^4.0.5:
   dependencies:
     "@babel/runtime" "^7.16.7"
 
+popmotion@11.0.0:
+  version "11.0.0"
+  resolved "https://registry.npmjs.org/popmotion/-/popmotion-11.0.0.tgz#910e2e7077d9aeba520db8744d40bb5354992212"
+  dependencies:
+    framesync "^6.0.1"
+    hey-listen "^1.0.8"
+    style-value-types "5.0.0"
+    tslib "^2.1.0"
+
 popmotion@11.0.3:
   version "11.0.3"
   resolved "https://registry.npmjs.org/popmotion/-/popmotion-11.0.3.tgz#565c5f6590bbcddab7a33a074bb2ba97e24b0cc9"
@@ -6781,6 +6828,14 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
+prop-types@15.7.2:
+  version "15.7.2"
+  resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
+  dependencies:
+    loose-envify "^1.4.0"
+    object-assign "^4.1.1"
+    react-is "^16.8.1"
+
 prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7, prop-types@^15.7.2:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
@@ -7029,7 +7084,7 @@ react-icons@^4.2.0:
   version "4.3.1"
   resolved "https://registry.npmjs.org/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"
 
-react-is@^16.13.1, react-is@^16.7.0:
+react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
 
@@ -7536,6 +7591,15 @@ sanity-plugin-dashboard-widget-netlify@^1.1.0:
     abort-controller "^2.0.3"
     react-props-stream "^1.0.0"
     rxjs "^6.0.0"
+
+sanity-plugin-iframe-pane@^1.0.16:
+  version "1.0.16"
+  resolved "https://registry.npmjs.org/sanity-plugin-iframe-pane/-/sanity-plugin-iframe-pane-1.0.16.tgz#0da4137551809af902d665fb8d6c29b28ffc0927"
+  dependencies:
+    "@sanity/icons" "^1.2.1"
+    "@sanity/ui" "^0.36.12"
+    prop-types "15.7.2"
+    usehooks-ts "^1.2.0"
 
 sax@~1.2.4:
   version "1.2.4"
@@ -8251,7 +8315,7 @@ tslib@^1.9.0, tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
 
-tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.0:
+tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.3.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
 
@@ -8501,6 +8565,10 @@ use-sidecar@^1.0.5:
 use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.npmjs.org/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
+
+usehooks-ts@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/usehooks-ts/-/usehooks-ts-1.2.0.tgz#e69ccf47e4d13367eec5577e888691d3d870cace"
 
 user-home@^2.0.0:
   version "2.0.0"

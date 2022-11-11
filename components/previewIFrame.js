@@ -1,6 +1,6 @@
 import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
-import resolveUrl from '../resolveProductionUrl';
+import resolveUrl from '../oldResolveUrl';
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -19,7 +19,7 @@ const PreviewIFrame = () =>
               <p>
                 This is your{' '}
                 <a
-                  href='https://westycoffeemain.gatsbyjs.io'
+                  href='https://westy-remix.vercel.app/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >

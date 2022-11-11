@@ -1,20 +1,20 @@
-const env = process.env.NODE_ENV || 'development';
+const localUrl = `http://localhost:3000`;
+const remoteUrl = `https://westy-remix.vercel.app/`;
+const baseUrl =
+  window?.location?.hostname === 'localhost' ? localUrl : remoteUrl;
 
-export default function resolvePreviewUrl(document) {
-  const baseUrl =
-    env === 'development'
-      ? 'http://localhost:8000'
-      : `https://westycoffeemain.gatsbyjs.io`;
-  switch (document._type) {
-    case 'landingPage':
-      return baseUrl;
-    case 'coffeePage':
-      return `${baseUrl}/coffee`;
-    case 'eventsPage':
-      return `${baseUrl}/events`;
-    case 'aboutPage':
-      return `${baseUrl}/about`;
-    default:
-      return null;
+export function resolveProductionUrl(doc) {
+  console.log('doc', doc);
+  const docType = doc._type;
+  const slug = doc?.slug?.current;
+
+  if (!slug) {
+    throw new Error(`Document has no slug, cannot preview`);
   }
+  const url = new URL(baseUrl);
+  console.log('url', url);
+  url.pathname = `${docType}/${slug}`;
+  url.searchParams.set(`preview`, `draft`);
+
+  return url.toString();
 }

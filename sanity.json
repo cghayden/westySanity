@@ -15,11 +15,14 @@
     "@sanity/desk-tool",
     "@sanity/dashboard",
     "dashboard-widget-netlify",
-    "@sanity/color-input"
+    "@sanity/color-input",
+    "iframe-pane"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [

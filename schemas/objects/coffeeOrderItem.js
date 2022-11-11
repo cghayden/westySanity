@@ -13,11 +13,11 @@ export default {
       title: 'Grind',
       type: 'string',
     },
-    {
-      name: 'size',
-      title: 'Size',
-      type: 'string',
-    },
+    // {
+    //   name: 'size',
+    //   title: 'Size',
+    //   type: 'string',
+    // },
     {
       name: 'quantity',
       title: 'Quantity',
@@ -32,12 +32,12 @@ export default {
   preview: {
     select: {
       quantity: 'quantity',
-      size: 'size',
+      // size: 'size',
       name: 'name',
       grind: 'grind',
     },
-    prepare: ({ quantity, size, name, grind }) => ({
-      title: `${quantity} ${size} ${name} ${grind}`,
+    prepare: ({ quantity, name, grind }) => ({
+      title: `${quantity}  ${name}, ${grind.toUpperCase()}`,
     }),
   },
 };

@@ -6,12 +6,14 @@ export default {
   type: 'document',
   title: 'Coffee',
   icon: GiCoffeeBeans,
+  // need to set required on price and slug
   fields: [
     {
       name: 'name',
       title: 'Coffee Name',
       type: 'string',
       description: 'Name of the coffee',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -32,7 +34,7 @@ export default {
       type: 'number',
       // custom input component
       description: 'Number of pounds in stock',
-      //rule : greater than 0?
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'roastLevel',
@@ -134,7 +136,7 @@ export default {
       // custom input component
       inputComponent: PriceInput,
       description: 'Price of the coffee in cents',
-      validation: (Rule) => Rule.min(1000),
+      validation: (Rule) => Rule.min(1000).required(),
     },
 
     {

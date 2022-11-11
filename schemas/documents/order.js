@@ -49,8 +49,8 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Pickup', value: 'Pickup' },
-          { title: 'Shipping', value: 'Shipping' },
+          { title: 'Pickup', value: 'pickup' },
+          { title: 'Shipping', value: 'shipping' },
         ],
         layout: 'radio',
       },
@@ -62,8 +62,8 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Daniels House', value: 'Daniels' },
-          { title: 'Edge Studio', value: 'Edge' },
+          { title: 'Daniels House', value: 'daniels' },
+          { title: 'Edge Studio', value: 'edge' },
         ], // <-- predefined values
         layout: 'radio', // <-- defaults to 'dropdown'
       },
@@ -121,7 +121,7 @@ export default {
     {
       name: 'number',
       title: 'Order Number',
-      type: 'number',
+      type: 'string',
     },
     {
       name: 'stripe_id',

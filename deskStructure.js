@@ -1,4 +1,3 @@
-import React from 'react';
 import S from '@sanity/desk-tool/structure-builder';
 import { GoBrowser as PageIcon, GoHome, GoSettings } from 'react-icons/go';
 import { GiCoffeeBeans } from 'react-icons/gi';
@@ -7,6 +6,10 @@ import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
 
 import PreviewIFrame from './components/previewIFrame';
 import ColorsPreview from './components/ColorsPreview';
+
+import Iframe from 'sanity-plugin-iframe-pane';
+
+import { resolveProductionUrl } from './resolveProductionUrl';
 
 const hiddenDocTypes = (listItem) =>
   ![
@@ -19,6 +22,30 @@ const hiddenDocTypes = (listItem) =>
     'coffee',
     'order',
   ].includes(listItem.getId());
+
+const previewViews = ['coffee'];
+
+// Here we declare which view panes show up for which schema types
+export const getDefaultDocumentNode = ({ schemaType }) => {
+  if (previewViews.includes(schemaType)) {
+    return S.document().views([
+      S.view.form(),
+      // Including the iframe pane, with a function to create the url
+      S.view
+        .component(Iframe)
+        .options({
+          url: (doc) => resolveProductionUrl(doc),
+          reload: {
+            button: true,
+          },
+        })
+        .title('Preview'),
+    ]);
+  }
+
+  return S.document();
+};
+
 export default () =>
   S.list()
     .title('Base')
