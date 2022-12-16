@@ -16,9 +16,9 @@ export default {
     },
 
     {
-      name: 'text',
+      name: 'content',
       type: 'bodyPortableText',
-      title: 'Page Introductory Content',
+      title: 'About Page Content',
       description: 'Optional',
     },
   ],
