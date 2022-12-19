@@ -10,20 +10,13 @@ export default {
       name: 'caption',
       type: 'string',
       title: 'Image Caption (optional)',
-      options: {
-        isHighlighted: true,
-      },
     },
     {
       name: 'alt',
       type: 'string',
       title: 'Alternative text, (a concise description of the image)',
       description: 'Important for SEO and accessibility.',
-      validation: (Rule) =>
-        Rule.error('You have to fill out the alternative text.').required(),
-      options: {
-        isHighlighted: true,
-      },
+      validation: (Rule) => Rule.error('You have to fill out the alternative text.').required(),
     },
   ],
   preview: {
@@ -32,4 +25,4 @@ export default {
       title: 'caption',
     },
   },
-};
+}

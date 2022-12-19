@@ -1,15 +1,14 @@
-import S from '@sanity/desk-tool/structure-builder';
-import { GoBrowser as PageIcon, GoHome, GoSettings } from 'react-icons/go';
-import { GiCoffeeBeans } from 'react-icons/gi';
-import { FaFileInvoiceDollar } from 'react-icons/fa';
-import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
+import {GoBrowser as PageIcon, GoHome, GoSettings} from 'react-icons/go'
+import {GiCoffeeBeans} from 'react-icons/gi'
+import {FaFileInvoiceDollar} from 'react-icons/fa'
+import {IoIosCheckmarkCircleOutline} from 'react-icons/io'
 
-import PreviewIFrame from './components/previewIFrame';
-import ColorsPreview from './components/ColorsPreview';
+// import PreviewIFrame from './components/previewIFrame'
+// import ColorsPreview from './components/ColorsPreview'
 
-import Iframe from 'sanity-plugin-iframe-pane';
+// import Iframe from 'sanity-plugin-iframe-pane'
 
-import { resolveProductionUrl } from './resolveProductionUrl';
+// import {resolveProductionUrl} from './resolveProductionUrl'
 
 const hiddenDocTypes = (listItem) =>
   ![
@@ -21,32 +20,31 @@ const hiddenDocTypes = (listItem) =>
     'contactPage',
     'coffee',
     'order',
-  ].includes(listItem.getId());
+  ].includes(listItem.getId())
 
-const previewViews = ['coffee'];
+const previewViews = ['coffee']
 
 // Here we declare which view panes show up for which schema types
-export const getDefaultDocumentNode = ({ schemaType }) => {
-  if (previewViews.includes(schemaType)) {
-    return S.document().views([
-      S.view.form(),
-      // Including the iframe pane, with a function to create the url
-      S.view
-        .component(Iframe)
-        .options({
-          url: (doc) => resolveProductionUrl(doc),
-          reload: {
-            button: true,
-          },
-        })
-        .title('Preview'),
-    ]);
-  }
+// export const getDefaultDocumentNode = ({schemaType}) => {
+//   if (previewViews.includes(schemaType)) {
+//     return S.document().views([
+//       S.view.form(),
+//       S.view
+//         .component(Iframe)
+//         .options({
+//           url: (doc) => resolveProductionUrl(doc),
+//           reload: {
+//             button: true,
+//           },
+//         })
+//         .title('Preview'),
+//     ])
+//   }
 
-  return S.document();
-};
+//   return S.document()
+// }
 
-export default () =>
+export default (S) =>
   S.list()
     .title('Base')
     .items([
@@ -61,55 +59,55 @@ export default () =>
                 .title('Sitewide Page Settings')
                 .icon(GoSettings)
                 .child(
-                  S.document()
-                    .schemaType('siteSettings')
-                    .documentId('siteSettings')
-                    .views([S.view.form(), ColorsPreview()])
+                  S.document().schemaType('siteSettings').documentId('siteSettings').views([
+                    S.view.form(),
+                    // ColorsPreview()
+                  ])
                 ),
               S.listItem()
                 .title('Home Page')
                 .icon(GoHome)
                 .child(
-                  S.document()
-                    .schemaType('landingPage')
-                    .documentId('homePage')
-                    .views([S.view.form(), PreviewIFrame()])
+                  S.document().schemaType('landingPage').documentId('homePage').views([
+                    S.view.form(),
+                    // PreviewIFrame()
+                  ])
                 ),
               S.listItem()
                 .title('Coffee Page')
                 .icon(PageIcon)
                 .child(
-                  S.document()
-                    .schemaType('coffeePage')
-                    .documentId('coffeePage')
-                    .views([S.view.form(), PreviewIFrame()])
+                  S.document().schemaType('coffeePage').documentId('coffeePage').views([
+                    S.view.form(),
+                    // PreviewIFrame()
+                  ])
                 ),
               S.listItem()
                 .title('Events Page')
                 .icon(PageIcon)
                 .child(
-                  S.document()
-                    .schemaType('eventsPage')
-                    .documentId('eventsPage')
-                    .views([S.view.form(), PreviewIFrame()])
+                  S.document().schemaType('eventsPage').documentId('eventsPage').views([
+                    S.view.form(),
+                    // PreviewIFrame()
+                  ])
                 ),
               S.listItem()
                 .title('About Page')
                 .icon(PageIcon)
                 .child(
-                  S.document()
-                    .schemaType('aboutPage')
-                    .documentId('aboutPage')
-                    .views([S.view.form(), PreviewIFrame()])
+                  S.document().schemaType('aboutPage').documentId('aboutPage').views([
+                    S.view.form(),
+                    // PreviewIFrame()
+                  ])
                 ),
               S.listItem()
                 .title('Contact Page')
                 .icon(PageIcon)
                 .child(
-                  S.document()
-                    .schemaType('contactPage')
-                    .documentId('contactPage')
-                    .views([S.view.form(), PreviewIFrame()])
+                  S.document().schemaType('contactPage').documentId('contactPage').views([
+                    S.view.form(),
+                    // PreviewIFrame()
+                  ])
                 ),
             ])
         ),
@@ -121,7 +119,7 @@ export default () =>
             .title('Coffee')
             .schemaType('coffee')
             .filter('_type == "coffee"')
-            .defaultOrdering([{ field: 'stock', direction: 'desc' }])
+            .defaultOrdering([{field: 'stock', direction: 'desc'}])
         ),
       S.listItem()
         .title('Orders')
@@ -138,9 +136,7 @@ export default () =>
                     .title('Open Orders')
                     .schemaType('order')
                     .filter('_type == "order" && shipped != true')
-                    .defaultOrdering([
-                      { field: 'orderDate', direction: 'desc' },
-                    ])
+                    .defaultOrdering([{field: 'orderDate', direction: 'desc'}])
                 ),
               S.listItem()
                 .title('Filled Orders')
@@ -150,9 +146,9 @@ export default () =>
                     .title('Filled Orders')
                     .schemaType('order')
                     .filter('_type == "order" && shipped == true')
-                    .defaultOrdering([{ field: 'orderDate', direction: 'asc' }])
+                    .defaultOrdering([{field: 'orderDate', direction: 'asc'}])
                 ),
             ])
         ),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
-    ]);
+    ])

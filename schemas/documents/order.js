@@ -1,6 +1,6 @@
-import PriceInput from '../../components/PriceInput';
-import { FaFileInvoiceDollar } from 'react-icons/fa';
-import moment from 'moment';
+// import PriceInput from '../../components/PriceInput';
+import {FaFileInvoiceDollar} from 'react-icons/fa'
+import dayjs from 'dayjs'
 // import { Checkbox } from '@sanity/ui';
 export default {
   title: 'Order',
@@ -35,7 +35,7 @@ export default {
       name: 'orderItems',
       title: 'Order Items',
       type: 'array',
-      of: [{ type: 'coffeeOrderItem' }],
+      of: [{type: 'coffeeOrderItem'}],
       description: 'The Items in the Order',
     },
     {
@@ -49,8 +49,8 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Pickup', value: 'pickup' },
-          { title: 'Shipping', value: 'shipping' },
+          {title: 'Pickup', value: 'pickup'},
+          {title: 'Shipping', value: 'shipping'},
         ],
         layout: 'radio',
       },
@@ -62,8 +62,8 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Daniels House', value: 'daniels' },
-          { title: 'Edge Studio', value: 'edge' },
+          {title: 'Daniels House', value: 'daniels'},
+          {title: 'Edge Studio', value: 'edge'},
         ], // <-- predefined values
         layout: 'radio', // <-- defaults to 'dropdown'
       },
@@ -99,12 +99,12 @@ export default {
       type: 'string',
     },
     //if deliveryMethod === 'Shipping' ->
-    { name: 'trackingNumber', title: 'Tracking Number', type: 'string' },
+    {name: 'trackingNumber', title: 'Tracking Number', type: 'string'},
     {
       name: 'total',
       title: 'Total',
       type: 'number',
-      inputComponent: PriceInput,
+      // inputComponent: PriceInput,
       description: 'Total Price of the Order',
       validation: (Rule) => Rule.min(100),
     },
@@ -148,15 +148,15 @@ export default {
       name: 'customerName',
       date: 'orderDate',
     },
-    prepare: ({ name, number, date }) => {
-      const formattedDate = moment(date).format('MMM. D, YYYY');
-      console.log('formattedDate', formattedDate);
+    prepare: ({name, number, date}) => {
+      const formattedDate = dayjs(date).format('MMMM DD')
+      console.log('formattedDate', formattedDate)
       //   console.log('formattedDate', formattedDate);
 
       return {
         title: name,
         subtitle: `${formattedDate}, # ${number}`,
-      };
+      }
     },
   },
-};
+}

@@ -1,6 +1,6 @@
-import PriceInput from '../../components/PriceInput';
+// import PriceInput from '../../components/PriceInput'
 
-import { GiCoffeeBeans } from 'react-icons/gi';
+import {GiCoffeeBeans} from 'react-icons/gi'
 export default {
   name: 'coffee',
   type: 'document',
@@ -20,7 +20,7 @@ export default {
       title: 'URL (slug)',
       type: 'slug',
       validation: (Rule) => Rule.required(),
-      initialValue: { current: Date.now().toString() },
+      initialValue: {current: Date.now().toString()},
       options: {
         source: 'name',
         maxLength: 100,
@@ -43,11 +43,11 @@ export default {
       description: 'Roast Level of the Coffee',
       options: {
         list: [
-          { title: 'Light', value: 'light' },
-          { title: 'Light-Medium', value: 'light-medium' },
-          { title: 'Medium', value: 'medium' },
-          { title: 'Medium-Dark', value: 'medium-dark' },
-          { title: 'Dark', value: 'dark' },
+          {title: 'Light', value: 'light'},
+          {title: 'Light-Medium', value: 'light-medium'},
+          {title: 'Medium', value: 'medium'},
+          {title: 'Medium-Dark', value: 'medium-dark'},
+          {title: 'Dark', value: 'dark'},
         ], // <-- predefined values
         layout: 'radio', // <-- defaults to 'dropdown'
       },
@@ -65,8 +65,7 @@ export default {
       name: 'featured',
       title: 'Featured Item?',
       type: 'boolean',
-      description:
-        'A featured item will be displayed on the home page as well as the coffee page',
+      description: 'A featured item will be displayed on the home page as well as the coffee page',
       options: {
         layout: 'checkbox',
       },
@@ -76,14 +75,13 @@ export default {
       name: 'description',
       title: 'Short Description',
       type: 'string',
-      description:
-        'A concise description of the coffee to display on the home page tile',
+      description: 'A concise description of the coffee to display on the home page tile',
     },
     {
       name: 'descriptionLong',
       title: 'Longer Description',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [{type: 'block'}],
       description:
         'A longer, more detailed story about this roast to show on the specific page for this coffee',
     },
@@ -134,7 +132,7 @@ export default {
       title: 'Price',
       type: 'number',
       // custom input component
-      inputComponent: PriceInput,
+      // inputComponent: PriceInput,
       description: 'Price of the coffee in cents',
       validation: (Rule) => Rule.min(1000).required(),
     },
@@ -152,7 +150,7 @@ export default {
     {
       title: 'In Stock',
       name: 'stock',
-      by: [{ field: 'stock', direction: 'desc' }],
+      by: [{field: 'stock', direction: 'desc'}],
     },
   ],
 
@@ -161,9 +159,9 @@ export default {
       name: 'name',
       stock: 'stock',
     },
-    prepare: ({ name, stock }) => ({
+    prepare: ({name, stock}) => ({
       title: name,
       subtitle: `${stock} in stock`,
     }),
   },
-};
+}
