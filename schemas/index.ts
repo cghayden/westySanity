@@ -19,7 +19,7 @@ import coffeeOrderItem from './objects/coffeeOrderItem'
 
 // Then we give our schema to the builder and provide the result to Sanity
 
-export default [
+export const schemaTypes = [
   coffee,
   post,
   event,

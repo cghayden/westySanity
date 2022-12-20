@@ -1,7 +1,7 @@
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
-import schemas from './schemas/schema'
-import deskStructure from './deskStructure'
+import {schemaTypes} from './schemas'
+import {structure, defaultDocumentNode} from './structure'
 import {colorInput} from '@sanity/color-input'
 
 import {visionTool} from '@sanity/vision'
@@ -9,21 +9,18 @@ import {visionTool} from '@sanity/vision'
 export default defineConfig({
   name: 'default',
   title: 'WestyCoffeeSanity V3',
-
   projectId: 't9guxb1x',
   dataset: 'production',
-
   // basePath: '/admin',
-
   plugins: [
     deskTool({
-      structure: deskStructure,
+      structure,
+      defaultDocumentNode,
     }),
     visionTool(),
     colorInput(),
   ],
-
   schema: {
-    types: schemas,
+    types: schemaTypes,
   },
 })

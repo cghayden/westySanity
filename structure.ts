@@ -6,9 +6,9 @@ import {IoIosCheckmarkCircleOutline} from 'react-icons/io'
 // import PreviewIFrame from './components/previewIFrame'
 // import ColorsPreview from './components/ColorsPreview'
 
-// import Iframe from 'sanity-plugin-iframe-pane'
+import Iframe from 'sanity-plugin-iframe-pane'
 
-// import {resolveProductionUrl} from './resolveProductionUrl'
+import {resolveProductionUrl} from './resolveProductionUrl'
 
 const hiddenDocTypes = (listItem) =>
   ![
@@ -22,29 +22,45 @@ const hiddenDocTypes = (listItem) =>
     'order',
   ].includes(listItem.getId())
 
-const previewViews = ['coffee']
+const previewViews = ['coffee', 'post']
 
 // Here we declare which view panes show up for which schema types
-// export const getDefaultDocumentNode = ({schemaType}) => {
-//   if (previewViews.includes(schemaType)) {
-//     return S.document().views([
-//       S.view.form(),
-//       S.view
-//         .component(Iframe)
-//         .options({
-//           url: (doc) => resolveProductionUrl(doc),
-//           reload: {
-//             button: true,
-//           },
-//         })
-//         .title('Preview'),
-//     ])
-//   }
+export const defaultDocumentNode = (S, {schemaType}) => {
+  if (previewViews.includes(schemaType)) {
+    return S.document().views([
+      S.view.form(),
+      S.view
+        .component(Iframe)
+        .options({
+          url: (doc) => resolveProductionUrl(doc),
+          reload: {
+            button: true,
+            revision: true,
+          },
+          // Optional: Set the default size
+          // defaultSize: `mobile`,
+          // default `desktop`,
+          // Optional: Pass attributes to the underlying `iframe` element:
+          // See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+          // attributes: {
+          // allow: 'fullscreen' // string, optional
+          // referrerPolicy: 'strict-origin-when-cross-origin' // string,optional
+          // sandbox: 'allow-same-origin' // string, optional
+          // }
+        })
+        .title('Preview'),
+    ])
+  }
+  // else :
+  return S.document()
+  // return S.document().views([
+  //   S.view.form(),
+  //   S.view.component(JsonView).title('JSON')
+  //  ])
+}
 
-//   return S.document()
-// }
-
-export default (S) =>
+// note: context includes `currentUser` and the client
+export const structure = (S, context) =>
   S.list()
     .title('Base')
     .items([
@@ -68,10 +84,10 @@ export default (S) =>
                 .title('Home Page')
                 .icon(GoHome)
                 .child(
-                  S.document().schemaType('landingPage').documentId('homePage').views([
-                    S.view.form(),
-                    // PreviewIFrame()
-                  ])
+                  S.document()
+                    .schemaType('landingPage')
+                    .documentId('homePage')
+                    .views([S.view.form()])
                 ),
               S.listItem()
                 .title('Coffee Page')
