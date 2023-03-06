@@ -18,8 +18,7 @@ export default {
       name: 'overlayText1',
       type: 'bodyPortableText',
       title: 'Main Image Overlay Text (optional)',
-      description:
-        'Optional Text that will overlay the main landing page background image',
+      description: 'Optional Text that will overlay the main landing page background image',
     },
     {
       name: 'transitionText1',
@@ -51,4 +50,4 @@ export default {
       title: 'name',
     },
   },
-};
+}

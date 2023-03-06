@@ -16,7 +16,7 @@ export default {
     },
 
     {
-      name: 'text',
+      name: 'content',
       type: 'bodyPortableText',
       title: 'Contact Page Content',
     },
@@ -26,4 +26,4 @@ export default {
       title: 'pageName',
     },
   },
-};
+}

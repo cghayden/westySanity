@@ -1,4 +1,4 @@
-import { MdEventNote } from 'react-icons/md';
+import {MdEventNote} from 'react-icons/md'
 
 export default {
   name: 'event',
@@ -57,19 +57,6 @@ export default {
       type: 'string',
       title: 'Zip Code',
     },
-    //   {
-    //     name: 'categories',
-    //     type: 'array',
-    //     title: 'Categories',
-    //     of: [
-    //       {
-    //         type: 'reference',
-    //         to: {
-    //           type: 'category',
-    //         },
-    //       },
-    //     ],
-    //   },
   ],
   orderings: [
     {
@@ -92,11 +79,11 @@ export default {
       title: 'title',
       date: 'date',
     },
-    prepare({ date, title = 'No title' }) {
+    prepare({date, title = 'No title'}) {
       return {
         date,
         title,
-      };
+      }
     },
   },
-};
+}

@@ -2,13 +2,12 @@ import {GoBrowser as PageIcon, GoHome, GoSettings} from 'react-icons/go'
 import {GiCoffeeBeans} from 'react-icons/gi'
 import {FaFileInvoiceDollar} from 'react-icons/fa'
 import {IoIosCheckmarkCircleOutline} from 'react-icons/io'
-
+import Iframe from 'sanity-plugin-iframe-pane'
 // import PreviewIFrame from './components/previewIFrame'
 // import ColorsPreview from './components/ColorsPreview'
 
-import Iframe from 'sanity-plugin-iframe-pane'
-
-import {resolveProductionUrl} from './resolveProductionUrl'
+import {resolveDocumentUrl} from './resolveDocumentUrl'
+import {resolvePageUrl} from './resolvePageUrl'
 
 const hiddenDocTypes = (listItem) =>
   ![
@@ -22,25 +21,24 @@ const hiddenDocTypes = (listItem) =>
     'order',
   ].includes(listItem.getId())
 
-const previewViews = ['coffee', 'post']
-
+const documentPreviewViews = ['coffee', 'post']
+const pagePreviewViews = ['landingPage']
 // Here we declare which view panes show up for which schema types
 export const defaultDocumentNode = (S, {schemaType}) => {
-  if (previewViews.includes(schemaType)) {
+  if (documentPreviewViews.includes(schemaType)) {
     return S.document().views([
       S.view.form(),
       S.view
         .component(Iframe)
         .options({
-          url: (doc) => resolveProductionUrl(doc),
+          url: (doc) => resolveDocumentUrl(doc),
           reload: {
             button: true,
             revision: true,
           },
-          // Optional: Set the default size
+          // Optional-- Set the default size (from desktop)
           // defaultSize: `mobile`,
-          // default `desktop`,
-          // Optional: Pass attributes to the underlying `iframe` element:
+          // Optional-- Pass attributes to the underlying `iframe` element:
           // See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
           // attributes: {
           // allow: 'fullscreen' // string, optional
@@ -87,43 +85,103 @@ export const structure = (S, context) =>
                   S.document()
                     .schemaType('landingPage')
                     .documentId('homePage')
-                    .views([S.view.form()])
+                    .views([
+                      S.view.form(),
+                      S.view
+                        .component(Iframe)
+                        .options({
+                          url: (doc) => resolvePageUrl(doc),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
+                        .title('Preview'),
+                    ])
                 ),
               S.listItem()
                 .title('Coffee Page')
                 .icon(PageIcon)
                 .child(
-                  S.document().schemaType('coffeePage').documentId('coffeePage').views([
-                    S.view.form(),
-                    // PreviewIFrame()
-                  ])
+                  S.document()
+                    .schemaType('coffeePage')
+                    .documentId('coffeePage')
+                    .views([
+                      S.view.form(),
+                      S.view
+                        .component(Iframe)
+                        .options({
+                          url: (doc) => resolvePageUrl(doc),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
+                        .title('Preview'),
+                    ])
                 ),
               S.listItem()
                 .title('Events Page')
                 .icon(PageIcon)
                 .child(
-                  S.document().schemaType('eventsPage').documentId('eventsPage').views([
-                    S.view.form(),
-                    // PreviewIFrame()
-                  ])
+                  S.document()
+                    .schemaType('eventsPage')
+                    .documentId('eventsPage')
+                    .views([
+                      S.view.form(),
+                      S.view
+                        .component(Iframe)
+                        .options({
+                          url: (doc) => resolvePageUrl(doc),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
+                        .title('Preview'),
+                    ])
                 ),
               S.listItem()
                 .title('About Page')
                 .icon(PageIcon)
                 .child(
-                  S.document().schemaType('aboutPage').documentId('aboutPage').views([
-                    S.view.form(),
-                    // PreviewIFrame()
-                  ])
+                  S.document()
+                    .schemaType('aboutPage')
+                    .documentId('aboutPage')
+                    .views([
+                      S.view.form(),
+                      S.view
+                        .component(Iframe)
+                        .options({
+                          url: (doc) => resolvePageUrl(doc),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
+                        .title('Preview'),
+                    ])
                 ),
               S.listItem()
                 .title('Contact Page')
                 .icon(PageIcon)
                 .child(
-                  S.document().schemaType('contactPage').documentId('contactPage').views([
-                    S.view.form(),
-                    // PreviewIFrame()
-                  ])
+                  S.document()
+                    .schemaType('contactPage')
+                    .documentId('contactPage')
+                    .views([
+                      S.view.form(),
+                      S.view
+                        .component(Iframe)
+                        .options({
+                          url: (doc) => resolvePageUrl(doc),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
+                        .title('Preview'),
+                    ])
                 ),
             ])
         ),

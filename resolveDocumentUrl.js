@@ -2,8 +2,7 @@ const localUrl = `http://localhost:3000`
 const remoteUrl = `https://westy-remix.vercel.app/`
 const baseUrl = window?.location?.hostname === 'localhost' ? localUrl : remoteUrl
 
-export function resolveProductionUrl(doc) {
-  console.log('doc', doc)
+export function resolveDocumentUrl(doc) {
   const docType = doc._type
   const slug = doc?.slug?.current
 

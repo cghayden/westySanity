@@ -19,7 +19,6 @@ export default {
       name: 'content',
       type: 'bodyPortableText',
       title: 'About Page Content',
-      description: 'Optional',
     },
   ],
   preview: {
@@ -27,4 +26,4 @@ export default {
       title: 'pageName',
     },
   },
-};
+}
