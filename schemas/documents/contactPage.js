@@ -20,6 +20,21 @@ export default {
       type: 'bodyPortableText',
       title: 'Contact Page Content',
     },
+    {
+      name: 'instagramLink',
+      type: 'string',
+      title: 'Instagram',
+    },
+    {
+      name: 'facebookLink',
+      type: 'string',
+      title: 'Facebook',
+    },
+    {
+      name: 'twitterLink',
+      type: 'string',
+      title: 'Twitter',
+    },
   ],
   preview: {
     select: {
